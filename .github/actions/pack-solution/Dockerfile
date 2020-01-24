@@ -5,6 +5,7 @@ FROM alpine:3.10
 COPY entrypoint-script.sh /entrypoint-script.sh
 
 RUN ["chmod", "+x", "/entrypoint-script.sh"]
+RUN ["sudo curl", "-o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"]
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint-script.sh"]
