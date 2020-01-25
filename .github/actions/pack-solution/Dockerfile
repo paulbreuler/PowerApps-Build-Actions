@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     curl
 
 RUN curl -o /bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-RUN ./bin/nuget.exe install Microsoft.CrmSdk.CoreTools -OutputDirectory /tools
+RUN su ./bin/nuget.exe install Microsoft.CrmSdk.CoreTools -OutputDirectory /tools
 
 RUN chmod +x /entrypoint-script.sh
 
